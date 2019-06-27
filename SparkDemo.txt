@@ -1,0 +1,22 @@
+Demo1:
+  描述：每行有几个words,进行words数的统计,返回word,count的key-value迭代器
+  方法：
+    a)flatMap 将拿到所有words
+    b)mapToPair 将所有word标注频数Freq为1,并返回(word,Freq)的二元组
+    c)reduceByKey 将所有相同word的Freq相加,并返回(word,Freq)的二元组
+ 
+Demo2:
+  描述:每行字段 col1 col2 ... coln 其中coli作为key,将所有具有相同key的col1对应的value按照迭代器形式作为coli的value
+      比如 coli:[123,421,444]
+  方法：# 大数据平台上01分隔符的文件select到本地后居然变成了\t分隔符.
+       # java里Pattern.compile()各种分隔符比如 空格" " "\t" "01"
+      a) mapToPair 将line按分隔符切分,通过List的索引拿到需要的key(coli)和value(col1),并返回二者的二元组(key,value)
+      b) reduceByKey 将二元组按照value+","+value进行reduce,返回结果
+      
+Demo3:
+  描述:匹配,(key,[a,b,c]) (a,0.3) (b,0.4) (c,0.5)  返回key对应的 a.score+b.score+c.score
+  方法:
+      a) 
+      
+      
+  
