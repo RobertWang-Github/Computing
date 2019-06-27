@@ -1,0 +1,11 @@
+JavaSparkContext sc = new JavaSparkContext(conf);
+lines = sc.textFile(datapath,minPartitions); # 通过文件(datapath)直接创建RDD(文件)lines
+# rdd.表示是action
+rdd.count(); # 返回rdd中rdd的数量(注意,每一行元素都是一个rdd)
+rdd.collect(); # 以迭代器的方式返回rdd中的所有数据
+# lines.表示是transformation
+lines.map() # 对lines中的每个元素line进行Map.假如输入为line1:word1,word2,word3.输出可以为line1:[word1,word2,word3]
+lines.flatMap() # 对map的结果额外执行flat操作,即将[]去掉,行转列.
+lines.mapToPair() # 将lines中的元素映射为pair
+lines.reduceByKey() # 按照同样的key进行reduce计算
+
