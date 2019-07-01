@@ -4,5 +4,5 @@ demo:
   求两个字符串的余弦相似度,编辑距离,LCS最长公共子序列
 方法:
   a) 余弦相似度.通过两个HashMap将输入String作好encoding(不需要排序).通过encoding直接计算dot和l2-norm
-  b) 编辑距离和LCS通过DP动态规划和滚动数组进行优化.
+  b) 编辑距离和LCS通过DP动态规划实现,time复杂度O(m*n) space复杂度O(m*n),并使用滚动数组进行优化,空间复杂度优化至O(min(m,n)).
   
