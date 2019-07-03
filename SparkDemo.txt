@@ -16,7 +16,9 @@ Demo2:
 Demo3:
   描述:匹配,(key,[a,b,c]) (a,0.3) (b,0.4) (c,0.5)  返回key对应的 a.score+b.score+c.score
   方法:
-      a) 
+      a) flatMapToPair 将lines (key,[a,b,c])拆解成(a,key),(b,key),(c,key)
+      b) mapToPair 将lines 映射为(a,0.3) (b,0.4) (c,0.5)
+      c) 将a) b)返回结果直接join 拿到(a,(key,0.3))...
+      d) 将c)的结果映射为（key,0.3）注意,此时会保留c)中的所有制,只不过去掉了a
+      e) reduceByKey 将同等key的value全部相加
       
-      
-  
