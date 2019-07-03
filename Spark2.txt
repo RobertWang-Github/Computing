@@ -8,6 +8,7 @@ lines.map() # 对lines中的每个元素line进行Map.假如输入为line1:word1
 lines.flatMap() # 对map的结果额外执行flat操作,即将[]去掉,行转列.
 lines.mapToPair() # 将lines中的元素映射为pair
 lines.reduceByKey() # 按照同样的key进行reduce计算
+lines.reduce() # 对所有的lines执行reduce
 lines.flatMapToPair() # 和flatMap一致,只不过结果需要为pair,注意flat返回的结果一定是迭代器,所以pair也需要最终存储为迭代器 
 # pairs.表示的也是transformation
 paris.mapValues() # 不改变key,但是改变value.
